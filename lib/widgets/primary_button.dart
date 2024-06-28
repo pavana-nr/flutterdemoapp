@@ -1,16 +1,26 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
+import 'package:assignment1/services/api_service.dart';
+import 'package:assignment1/views/home_screen.dart';
+import 'package:crypto/crypto.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+// ignore: must_be_immutable
 class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({
+  PrimaryButton({
     super.key,
     required GlobalKey<FormState> formKey,
     required String email,
+    required String password,
   })  : _formKey = formKey,
-        _email = email;
+        _email = email,
+        _password = password;
 
   final GlobalKey<FormState> _formKey;
   final String _email;
+  final String _password;
+  late String passwd;
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +28,13 @@ class PrimaryButton extends StatelessWidget {
       onPressed: () {
         if (_formKey.currentState!.validate()) {
           _formKey.currentState!.save();
-          if (kDebugMode) {
-            print(_email);
-          }
+          var bytes = utf8.encode(_password); // Data being hashed
+          passwd = sha256.convert(bytes) as String;
+          Provider.of<ApiService>(context).login(_email, passwd);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MyHomePage()),
+          );
         }
       },
       style: ElevatedButton.styleFrom(

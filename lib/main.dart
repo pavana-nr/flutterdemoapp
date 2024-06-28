@@ -1,9 +1,12 @@
+import 'package:assignment1/services/api_service.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'views/login_page.dart';
+import 'views/login_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (_) => ApiService(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

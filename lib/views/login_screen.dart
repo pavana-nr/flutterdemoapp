@@ -1,5 +1,4 @@
 import 'package:assignment1/widgets/primary_button.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/divider_widget.dart';
@@ -11,12 +10,14 @@ class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   String _email = '';
+  // ignore: unused_field
   String _password = '';
 
   @override
@@ -141,7 +142,11 @@ class _LoginPageState extends State<LoginPage> {
                         ],
                       ),
                       const SizedBox(height: 16),
-                      PrimaryButton(formKey: _formKey, email: _email),
+                      PrimaryButton(
+                        formKey: _formKey,
+                        email: _email,
+                        password: _password,
+                      ),
                       const SizedBox(height: 16),
                       const DividerWidget(),
                       const SizedBox(height: 25),
