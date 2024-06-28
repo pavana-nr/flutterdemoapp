@@ -14,7 +14,7 @@ class TermsAndPrivacyWIdget extends StatelessWidget {
           children: [
             TextSpan(
                 text:
-                    'By continuing,you agree to \n Company\'s'), // Regular text
+                    'By continuing,you agree to \n Promilo\'s'), // Regular text
             TextSpan(
               text: ' Terms of Use & Privacy Policy',
               style: TextStyle(

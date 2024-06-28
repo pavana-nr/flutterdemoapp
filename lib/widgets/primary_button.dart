@@ -32,7 +32,7 @@ class PrimaryButton extends StatelessWidget {
           final Digest digest = sha256.convert(bytes);
           final String hashedPassword = digest.toString();
           Provider.of<ApiService>(context, listen: false)
-              .login(_email, hashedPassword);
+              .login(_email, '$hashedPassword + &grant_type=password');
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const MyHomePage()),

@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 10),
                 const Center(
                     child: Text(
-                  "company",
+                  "promilo",
                   style: TextStyle(fontSize: 25.0),
                 )),
                 const SizedBox(height: 60),
