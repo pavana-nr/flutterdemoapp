@@ -12,6 +12,16 @@ class Styles {
     fontWeight: FontWeight.bold,
   );
 
+  static const TextStyle headline3 = TextStyle(
+    fontSize: 18.0,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const TextStyle headline4 = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.bold,
+  );
+
   static const TextStyle bodyText1 = TextStyle(
     fontSize: 16.0,
     fontWeight: FontWeight.normal,

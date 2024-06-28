@@ -16,9 +16,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-  String _email = '';
-  // ignore: unused_field
-  String _password = '';
+  String _email = 'test45@yopmail.com';
+  String _password = 'Test@123';
 
   @override
   Widget build(BuildContext context) {

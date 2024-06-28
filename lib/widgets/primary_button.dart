@@ -29,8 +29,10 @@ class PrimaryButton extends StatelessWidget {
         if (_formKey.currentState!.validate()) {
           _formKey.currentState!.save();
           var bytes = utf8.encode(_password); // Data being hashed
-          passwd = sha256.convert(bytes) as String;
-          Provider.of<ApiService>(context).login(_email, passwd);
+          final Digest digest = sha256.convert(bytes);
+          final String hashedPassword = digest.toString();
+          Provider.of<ApiService>(context, listen: false)
+              .login(_email, hashedPassword);
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const MyHomePage()),

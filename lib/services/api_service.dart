@@ -16,6 +16,4 @@ class ApiService with ChangeNotifier {
       print(response);
     }
   }
-
-  Future<void> logout() async {}
 }
