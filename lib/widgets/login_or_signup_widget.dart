@@ -24,12 +24,14 @@ class LoginOrSignupWidget extends StatelessWidget {
           ],
         ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             const Text('Don\'t have an account'),
             TextButton(
               onPressed: () {},
               child: const Text(
                 'Sign Up',
+                textAlign: TextAlign.right,
                 style: TextStyle(
                     fontSize: 20.0, color: Color.fromARGB(255, 4, 117, 209)),
               ),
